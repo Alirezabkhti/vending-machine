@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "ab64bef2-4b2f-4951-84a5-04d7686c0701",
+		"name": "vending-machin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"Alireza\",\n    \"password\" : \"123456\",\n    \"userRole\" : \"ROLE_SELLER\",\n    \"deposit\" : 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY3MTIyMjk4NSwiZXhwIjoxNjcxNjU0OTg1fQ.OFW-BA7y3852Rs5hNERZvyJLK74Kk9nqkCBDWhZdGUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : \"23f93d7f-b6c8-4b85-85bc-dfe520ad75af\",\n    \"username\" : \"Alireza\",\n    \"password\" : \"123456\",\n    \"userRole\" : \"ROLE_SELLER\",\n    \"deposit\" : 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY3MTIyMjk4NSwiZXhwIjoxNjcxNjU0OTg1fQ.OFW-BA7y3852Rs5hNERZvyJLK74Kk9nqkCBDWhZdGUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY3MTIyMjk4NSwiZXhwIjoxNjcxNjU0OTg1fQ.OFW-BA7y3852Rs5hNERZvyJLK74Kk9nqkCBDWhZdGUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/23f93d7f-b6c8-4b85-85bc-dfe520ad75af",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"23f93d7f-b6c8-4b85-85bc-dfe520ad75af"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/8b984fac-9074-40c5-9cf2-13775cefba3d",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"8b984fac-9074-40c5-9cf2-13775cefba3d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetDeposit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidXllciIsImlhdCI6MTY3MTIyMjk4NSwiZXhwIjoxNjcxNjU0OTg1fQ.CpMGpqKVbXC-yVD_ORlWEJd1hZFw9Y3cftQaGJBuLks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/bbb9d7c1-8b40-497a-a9bf-07261947f70e/resetDeposit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"bbb9d7c1-8b40-497a-a9bf-07261947f70e",
+								"resetDeposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deposit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidXllciIsImlhdCI6MTY3MTIyMjk4NSwiZXhwIjoxNjcxNjU0OTg1fQ.CpMGpqKVbXC-yVD_ORlWEJd1hZFw9Y3cftQaGJBuLks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"bbb9d7c1-8b40-497a-a9bf-07261947f70e\",\n    \"depositAmount\" : 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/deposit",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbGlyZXphIiwiaWF0IjoxNjcxMjE4MDU2LCJleHAiOjE2NzE2NTAwNTZ9.n5TmwLbd8t6dfkErMLlvCgTxh5OyngQjtSfL8Iry_-o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"test2\",\n    \"price\" : 15,\n    \"availableAmount\" : 4,\n    \"sellerId\" : \"e9223073-7d65-4018-a424-5bad0e59959a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbGlyZXphIiwiaWF0IjoxNjcxMjE4MDU2LCJleHAiOjE2NzE2NTAwNTZ9.n5TmwLbd8t6dfkErMLlvCgTxh5OyngQjtSfL8Iry_-o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/e9223073-7d65-4018-a424-5bad0e59959a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"e9223073-7d65-4018-a424-5bad0e59959a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZWxsZXIiLCJpYXQiOjE2NzEyMjQxNDMsImV4cCI6MTY3MTY1NjE0M30.PZZkpBb6xwpYh-24grfniC2ZtXLMiv76IHMZjIwc8WM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : \"95bd1179-7f7f-49c0-9b3c-fb418b014f47\",\n    \"name\" : \"p1_update\",\n    \"price\" : 15,\n    \"availableAmount\" : 4,\n    \"sellerId\" : \"954d045c-75fe-4e19-92d9-78bcdd29d4eb\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbGlyZXphIiwiaWF0IjoxNjcxMjE4MDU2LCJleHAiOjE2NzE2NTAwNTZ9.n5TmwLbd8t6dfkErMLlvCgTxh5OyngQjtSfL8Iry_-o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/e9223073-7d65-4018-a424-5bad0e59959a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"e9223073-7d65-4018-a424-5bad0e59959a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "purchase",
+			"item": [
+				{
+					"name": "purchase",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\" :\"\",\n    \"amount\" : 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/purchases",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchases"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"buyer\",\n    \"password\" : 123456\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/authentication",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"authentication"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
